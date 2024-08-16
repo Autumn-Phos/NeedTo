@@ -1,0 +1,39 @@
+# User data
+Library/
+Temp/
+obj/
+Assets/Plugins/Android/bin/
+Assets/Plugins/iOS/bin/
+Assets/Plugins/WebGL/bin/
+
+# Editor preferences
+Assets/Editor/
+
+# Generated files
+Assets/Resources/
+Assets/StreamingAssets/
+Logs/
+
+# Build output
+Assets/Build/
+
+# Local settings
+Assets/Settings/
+Assets/ProjectSettings/
+
+# Packages
+Packages/manifest.json
+Packages/
+
+# Visual Studio files
+*.suo
+*.user
+*.csproj
+*.sln
+*.tmproj
+*.userprefs
+*.meta
+*.log
+
+# Confidential information
+APIConfig.cs
