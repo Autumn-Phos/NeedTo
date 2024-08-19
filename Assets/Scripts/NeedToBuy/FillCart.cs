@@ -3,6 +3,12 @@ using System.Collections;
 using UnityEngine;
 
 public class FillCart : MonoBehaviour {
+    private enum FillCartOptions {
+        GetPurchase,
+        GetPurchaseHistory
+    };
+
+    [SerializeField] private FillCartOptions _fillCartOption;
     [SerializeField] private Transform _cartDataContentTransform;
     [SerializeField] private GameObject _productPrefab;
     [SerializeField] private GetProducts _getProducts;
@@ -20,7 +26,12 @@ public class FillCart : MonoBehaviour {
     }
 
     private IEnumerator GetAPIResponseAndConvertToProductList() {
-        yield return StartCoroutine(_getProducts.StartFormirateProductRequest());
+        if (FillCartOptions.GetPurchase == _fillCartOption) {
+            yield return StartCoroutine(_getProducts.StartFormirateProductRequest(false));
+        }
+        else if (FillCartOptions.GetPurchaseHistory == _fillCartOption) {
+            yield return StartCoroutine(_getProducts.StartFormirateProductRequest(true));
+        }
         
         string APIResponse = _getProducts.GetAPIResponse();
         ProductList playerData = JsonUtility.FromJson<ProductList>(APIResponse);

@@ -22,7 +22,6 @@ public class ScrollRectSwipeDetector : MonoBehaviour {
                 }
             }
             else {
-                print(_scrollRect.velocity.y);
                 if (_timerCoroutine != null) {
                     StopCoroutine(_timerCoroutine);
                     _timerCoroutine = null;

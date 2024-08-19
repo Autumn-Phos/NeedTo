@@ -3,17 +3,17 @@ using System.Collections;
 using CutsomRequests;
 using UnityEngine;
 
-public class DeleteProduct : MonoBehaviour {
+public class MarkPurchasedProducts : MonoBehaviour {
     [SerializeField] private CreateProductRequest _createProductRequest;
     [SerializeField] private ProductsContainer _productsContainer;
-    [SerializeField] private string additionalURL;
+    [SerializeField] private string _additionalURL;
     [SerializeField] private FillCart _fillCart;
 
-    public void StartDeleteProduct() {
-        StartCoroutine(StartFormirateDeleteProductRequest());
+    public void StartMarkPurchasedProducts() {
+        StartCoroutine(FormirateMarkingPurchasedProductsRequest());
     }
 
-    private IEnumerator StartFormirateDeleteProductRequest() {
+    private IEnumerator FormirateMarkingPurchasedProductsRequest() {
         List<string> productsIds = new List<string>();
 
         foreach(GameObject product in _productsContainer.TakeHighlightedProductsToDelete()) {
@@ -21,9 +21,9 @@ public class DeleteProduct : MonoBehaviour {
             productsIds.Add(productData.productId);
         }
         
-        Dictionary<string, string> _productsToDelete = new Dictionary<string, string>() {{"productId", string.Join(",", productsIds)}};
+        Dictionary<string, string> purchasedProducts = new Dictionary<string, string>() {{APIConfig.poductId_NameOfVariableInDatabase, string.Join(",", productsIds)}};
 
-        yield return StartCoroutine(_createProductRequest.SendPostAPIRequest(_productsToDelete, additionalURL));
+        yield return StartCoroutine(_createProductRequest.SendPostAPIRequest(purchasedProducts, _additionalURL));
 
         _fillCart.UpateCartFills();
     }
