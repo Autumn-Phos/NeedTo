@@ -4,7 +4,8 @@ using CutsomRequests;
 using UnityEngine;
 
 public class MarkPurchasedProducts : MonoBehaviour {
-    [SerializeField] private CreateProductRequest _createProductRequest;
+    private CreateProductRequest _createProductRequest => FindObjectOfType<CreateProductRequest>();
+
     [SerializeField] private ProductsContainer _productsContainer;
     [SerializeField] private string _additionalURL;
     [SerializeField] private FillCart _fillCart;

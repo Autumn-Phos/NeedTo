@@ -5,9 +5,7 @@ public class ShowAppVersion : MonoBehaviour
 {
     private string _appVersion => Application.version;
 
-    private void Start()
-    {
-        print("Application Version: " + _appVersion);
+    private void Start() {
         gameObject.GetComponent<TextMeshProUGUI>().text = "Version: " + _appVersion;
     }
 }

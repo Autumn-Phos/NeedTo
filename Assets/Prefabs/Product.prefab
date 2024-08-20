@@ -278,6 +278,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4190404884287919819}
   - component: {fileID: 2826625421273020619}
+  - component: {fileID: 7488821926690651493}
   m_Layer: 5
   m_Name: Toggle
   m_TagString: Untagged
@@ -364,7 +365,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7488821926690651493}
+        m_TargetAssemblyTypeName: CrossOutText, Assembly-CSharp
+        m_MethodName: SwitchCrossOutText
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
+--- !u!114 &7488821926690651493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2836183027810186432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa3ffde5fa45ff84b8c7a8d1258e3821, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _productNames:
+  - {fileID: 662232918834435566}
+  - {fileID: 8234682468951204250}
+  - {fileID: 639503061942632065}
 --- !u!1 &3189375755694643814
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,7 +544,6 @@ MonoBehaviour:
   - {r: 0.47058824, g: 1, b: 0.4, a: 1}
   - {r: 1, g: 1, b: 0.4, a: 1}
   - {r: 1, g: 0.4627451, b: 0.4, a: 1}
-  _isDeleteToggleActive: 0
 --- !u!1 &3805117671147215680
 GameObject:
   m_ObjectHideFlags: 0

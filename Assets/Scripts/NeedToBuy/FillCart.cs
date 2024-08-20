@@ -9,10 +9,11 @@ public class FillCart : MonoBehaviour {
         GetPurchaseHistory
     };
 
+    private GetProducts _getProducts => FindObjectOfType<GetProducts>();
+
     [SerializeField] private FillCartOptions _fillCartOption;
     [SerializeField] private Transform _cartDataContentTransform;
     [SerializeField] private GameObject _productPrefab;
-    [SerializeField] private GetProducts _getProducts;
     [SerializeField] private ProductsContainer _productsContainer;
 
     private void Start()

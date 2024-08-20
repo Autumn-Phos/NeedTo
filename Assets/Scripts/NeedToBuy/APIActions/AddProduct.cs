@@ -25,7 +25,6 @@ public class AddProduct : MonoBehaviour {
         yield return StartCoroutine(_createProductRequest.SendPostAPIRequest(_productData, additionalURL));
 
         ClearDictionary();
-        _changeFrame.ChangeFramesFromFirstToSecond();
         _fillCart.UpateCartFills();
     }
 

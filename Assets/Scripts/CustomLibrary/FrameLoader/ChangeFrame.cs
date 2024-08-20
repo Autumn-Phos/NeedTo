@@ -1,43 +1,41 @@
-using System.Collections.Generic;
-using System.Collections;
 using UnityEngine;
 
-public class ChangeFrame : MonoBehaviour
-{
+public class ChangeFrame : MonoBehaviour {
     private enum SceneLoadingType {
         Standard,
         WithLoadingScripts
     }
 
+    [SerializeField] private GameObject _openFrame;
+    [SerializeField] private GameObject _frame;
     [SerializeField] private SceneLoadingType _sceneLoadingType;
-    [SerializeField] private GameObject _firstFrame;
-    [SerializeField] private GameObject _secondFrame;
-    [SerializeField] private GameObject[] _auxiliaryFrames;
 
-    public void ChangeFramesFromFirstToSecond() {
-        if (_secondFrame != null) _secondFrame.SetActive(true);
+    private Transform _framesContainerTransform => FindObjectOfType<Transform>();
 
-        switch (_sceneLoadingType) {
-            case SceneLoadingType.Standard:
-                Debug.Log("Обычная загрузка");
-                break;
-            case SceneLoadingType.WithLoadingScripts:
-                _secondFrame.GetComponent<LoadFrame>().StartLoadFrame();
-                Debug.Log("Загрузка со скриптами");
-                break;
-            default:
-                Debug.LogWarning("Неизвестный тип загрузки!");
-                break;
-        }
-        
+    public void ChangeFrames() {
+        if (_frame != null) {
+            GameObject newFrame = Instantiate(_frame, _openFrame.transform.parent);
 
-        CloseSubFrame();
-        if (_firstFrame != null) _firstFrame.SetActive(false);
-    }
+            switch (_sceneLoadingType) {
+                case SceneLoadingType.Standard:
+                    Debug.Log("Standart load");
+                    break;
+                case SceneLoadingType.WithLoadingScripts:
+                    LoadFrame loadFrame = newFrame.GetComponent<LoadFrame>();
+                    if (loadFrame != null) {
+                        loadFrame.StartLoadFrame();
+                        Debug.Log("Load with scripts");
+                    }
+                    else {
+                        Debug.LogWarning("ERROR: not found \"Start Load Frame\"");
+                    }
+                    break;
+                default:
+                    Debug.LogWarning("ERROR: not found \"Scene Loading Type\"");
+                    break;
+            }
 
-    private void CloseSubFrame () {
-        foreach(var auxiliaryFrame in _auxiliaryFrames) {
-            if(auxiliaryFrame != null) auxiliaryFrame.SetActive(false);
+            if (_openFrame != null) Destroy(_openFrame);
         }
     }
 }
