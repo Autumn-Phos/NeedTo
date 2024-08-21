@@ -28,4 +28,4 @@
 * ChooseOneOfTheOptions переименован в ChoosePriority
 * ChoosePriority более не уневерсален как был ChooseOneOfTheOptions и занимается только выбором приоритета
 
-## Текст с версией приложения **Version** перемещен в **Sidebar**
+## Текст с версией приложения **VersionText** перемещен в **Sidebar**
