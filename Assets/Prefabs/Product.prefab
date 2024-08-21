@@ -430,7 +430,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2215467239447568677}
         m_TargetAssemblyTypeName: ProductContent, Assembly-CSharp
-        m_MethodName: ChangePropertyIsDeleteToggleActive
+        m_MethodName: ChangePropertyIsSelectToggleActive
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 2826625421273020619}
@@ -616,6 +616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4187c1125092f3446bdf0c1064befa75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isSelectToggleActive: 0
   _priorityColor:
   - {r: 0.47058824, g: 1, b: 0.4, a: 1}
   - {r: 1, g: 1, b: 0.4, a: 1}

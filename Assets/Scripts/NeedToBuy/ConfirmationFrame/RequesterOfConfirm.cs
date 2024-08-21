@@ -1,7 +1,7 @@
 using UnityEngine.Events;
 using UnityEngine;
 
-public class RequesrerOfConfirm : MonoBehaviour {
+public class RequesterOfConfirm : MonoBehaviour {
     [SerializeField] private UnityEvent _scriptForConfirm;
 
     public void StartRequestOfConfirm() { 

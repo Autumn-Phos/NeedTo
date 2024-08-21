@@ -19,6 +19,22 @@ MonoBehaviour:
     m_Key: Priority
     m_Metadata:
       m_Items: []
+  - m_Id: 36961792196608
+    m_Key: CreateProduct
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51147872043008
+    m_Key: ProductName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51193367658496
+    m_Key: ProductQuantity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51195611611136
+    m_Key: ShopName
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

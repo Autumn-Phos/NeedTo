@@ -9,7 +9,7 @@ public class ProductsContainer : MonoBehaviour {
         List<GameObject> highlightedProductsToDelete = new List<GameObject>();
 
         foreach(GameObject product in _productList) {
-            if (product.GetComponent<ProductContent>().TakeIsDeleteToggleActive()) highlightedProductsToDelete.Add(product);
+            if (product.GetComponent<ProductContent>().TakeIsSelectToggleActive()) highlightedProductsToDelete.Add(product);
         }
 
         return highlightedProductsToDelete;

@@ -22,6 +22,22 @@ MonoBehaviour:
     m_Localized: 'Priority:'
     m_Metadata:
       m_Items: []
+  - m_Id: 36961792196608
+    m_Localized: Create Product
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51147872043008
+    m_Localized: Product name...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51193367658496
+    m_Localized: Product quantity...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51195611611136
+    m_Localized: Shop name...
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

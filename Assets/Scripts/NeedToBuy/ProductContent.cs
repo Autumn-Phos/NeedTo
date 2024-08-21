@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 
 public class ProductContent : MonoBehaviour {
-    private bool _isDeleteToggleActive;
+    [SerializeField] private bool _isSelectToggleActive;
     private ProductData _productInfo;
 
     [SerializeField] private List<Color> _priorityColor = new List<Color>();
@@ -24,12 +24,12 @@ public class ProductContent : MonoBehaviour {
         gameObject.GetComponent<Image>().color = _priorityColor[productPriority];
     }
 
-    public void ChangePropertyIsDeleteToggleActive(Toggle toggle) {
-        _isDeleteToggleActive = toggle.isOn;
+    public void ChangePropertyIsSelectToggleActive(Toggle toggle) {
+        _isSelectToggleActive = toggle.isOn;
     }
 
-    public bool TakeIsDeleteToggleActive() {
-        return _isDeleteToggleActive;
+    public bool TakeIsSelectToggleActive() {
+        return _isSelectToggleActive;
     }
 
     public ProductData TakeProductInfo() {

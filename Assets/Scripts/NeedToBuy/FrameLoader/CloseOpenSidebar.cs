@@ -2,19 +2,14 @@ using UnityEngine;
 
 public class CloseOpenSidebar : MonoBehaviour {
     [SerializeField] private ChangeFrame _changeFrame;
-
-    private GameObject _sidebar => gameObject;
+    [SerializeField] private GameObject _sidebarFrame;
 
     public void OpenSidebar(GameObject activeFrame) {
-        _sidebar.SetActive(true);
+        _sidebarFrame.SetActive(true);
         _changeFrame.BindActiveFrame(activeFrame);
     }
 
     public void CloseSidebar() {
-        _sidebar.GetComponent<Animator>().SetTrigger("CloseSidebar");
-    }
-
-    public void SetActiveSidebar() {
-        _sidebar.SetActive(false);
+        _sidebarFrame.GetComponent<Animator>().SetTrigger("CloseSidebar");
     }
 }
