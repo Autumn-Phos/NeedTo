@@ -14,6 +14,7 @@ public class ProductContent : MonoBehaviour {
         texts[0].text = product.productName;
         texts[1].text = product.productQuantity + APIConfig.quantityType;
         texts[2].text = product.productShopName;
+        texts[4].text = product.productPriority;
         ChangeProductPriorityColor(int.Parse(product.productPriority));
 
         _productInfo = product;

@@ -6,7 +6,7 @@ using TMPro;
 public class ProductDataCollector : MonoBehaviour
 {
     [SerializeField] private ProductInfo[] ProductInfo;
-    [SerializeField] private ChooseOneOfTheOptions _chooseOneOfTheOptions;
+    [SerializeField] private ChoosePriority _choosePriority;
 
     public Dictionary<string, string> CollectProductInfo() {
         Dictionary<string, string> productData = new Dictionary<string, string>();
@@ -15,20 +15,11 @@ public class ProductDataCollector : MonoBehaviour
             productData.Add(data.GetNameOfProductInfoType(), data.GetTextFieldWithProductInfo().ToString());
         }
 
-        if (_chooseOneOfTheOptions !=null) {
-            productData.Add(APIConfig.productPryority_NameOfVariableInDatabase, _chooseOneOfTheOptions.GetSelectedOptionNumber().ToString());
+        if (_choosePriority !=null) {
+            productData.Add(APIConfig.productPryority_NameOfVariableInDatabase, _choosePriority.GetSelectedPriorityNumber().ToString());
         }
         
-        ClearInputFieldData();
         return productData;
-    }
-
-    private void  ClearInputFieldData() {
-        foreach(ProductInfo data in ProductInfo) {
-            data.ClearTextFieldWithProductInfo();
-        }
-        _chooseOneOfTheOptions.SetDefaultOption();
-        Debug.Log("ProductActionFrame - all field change value to default");
     }
 }
 

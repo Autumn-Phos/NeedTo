@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class GetProducts : MonoBehaviour {
     [SerializeField] private CreateProductRequest _createProductRequest;
-    [SerializeField] private FillCart _fillCart;
     [SerializeField] private string additionalURL;
 
     public IEnumerator StartFormirateProductRequest(bool getPurchasedProducts) {
